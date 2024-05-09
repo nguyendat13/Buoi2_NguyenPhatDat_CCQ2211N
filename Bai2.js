@@ -1,28 +1,28 @@
-const subjectList = document.getElementById('subjectList');
-const subjectForm = document.getElementById('subjectForm');
+const danhSachMonHoc = document.getElementById('danh-sach-mon-hoc');
+        const formThemMonHoc = document.getElementById('form-them-mon-hoc');
 
-subjectForm.addEventListener('submit', function(event) {
-  event.preventDefault();
+        formThemMonHoc.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-  const subjectName = document.getElementById('subjectName').value.trim();
+            const tenMonHoc = document.getElementById('ten-mon-hoc').value.trim(); // Xóa whitespace
 
-  if (subjectName === '') {
-    alert('Vui lòng nhập tên môn học.');
-    return;
-  }
+            if (!tenMonHoc) {
+                alert('Vui lòng nhập tên môn học!');
+                return;
+            }
 
-  const newSubjectItem = document.createElement('li');
-  newSubjectItem.textContent = subjectName;
-  newSubjectItem.addEventListener('click', function() {
-    if (confirm('Bạn có muốn xóa môn học này?')) {
-      subjectList.removeChild(newSubjectItem);
-    }
-    
-  });
+            const li = document.createElement('li');
+            li.textContent = tenMonHoc;
 
-  subjectList.appendChild(newSubjectItem);
-  subjectForm.reset();
-  
-});
+            const buttonXoa = document.createElement('button');
+            buttonXoa.textContent = 'Xóa';
+            buttonXoa.addEventListener('click', function() {
+                danhSachMonHoc.removeChild(li);
+            });
 
+            li.appendChild(buttonXoa);
 
+            danhSachMonHoc.appendChild(li);
+
+            formThemMonHoc.reset();
+        });
