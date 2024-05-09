@@ -1,4 +1,4 @@
-#BÀI TẬP BUỔI 2_CCQ2211N
+#BÀI TẬP BUỔI 3_CCQ2211N
 ## THÔNG TIN SINH VIÊN
 -Mã số sinh viên :2122110570
 -Họ và tên :Nguyễn Phát Đạt
